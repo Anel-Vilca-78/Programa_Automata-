@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Cadena</title>
+</head>
+<body>
+    <h1>Validación de Cadena</h1>
+    <form method="POST">
+        <label for="cadena">Ingresa una cadena:</label>
+        <input type="text" name="cadena" id="cadena" required>
+        <input type="submit" value="Validar">
+    </form>
+    
+    {% if resultado %}<br>
+    <p>Resultado:</p>
+        <p>{{cadena}}</p>
+        {% for item in resultado[0:-1] %}
+            <tr>{{ item }}</tr>
+        {% endfor %}
+        <br>
+    <h2>{{resultado[-1]}}</h2>
+    {% endif %}
+</body>
+</html>
